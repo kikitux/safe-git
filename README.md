@@ -1,6 +1,6 @@
 # safe-git
 
-## Check for AWS creds globally in git
+## Check for AWS creds in git
 
 - Enable git templates:
 ```
