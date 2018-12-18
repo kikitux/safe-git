@@ -14,7 +14,7 @@ mkdir -p ~/.git-templates/hooks
 
 - Create `pre-commit` hook in ~/.git-templates/hooks
 
-`~/.git-templates/hooks/pre-commit`:
+`vi ~/.git-templates/hooks/pre-commit`
 
 ```
 #!/bin/sh
@@ -46,7 +46,27 @@ chmod a+x ~/.git-templates/hooks/pre-commit
 git init
 ```
 
+### test it works
 
+```
+mkdir catch-aws
+cd catch-aws
+git init
+echo 'AKIAAAAAAAAAAAAAAAAA' | tee bad.txt
+git add bad.txt
+git commit -m "test"
+```
+
+This should fail to commit, and you should see a message like this:
+
+```
+$ git commit -m "test"
+err: commit include regex for AWS
+bad.txt:AKIAAAAAAAAAAAAAAAAA
+use git rm to remove files and avoid commiting your creds
+
+git rm --cached bad.txt
+```
 
 ## AWS creds on git project, as hook
 
@@ -77,7 +97,7 @@ ensure the file have the right permissions
 chmod +x .git/hooks/pre-commit
 ```
 
-## AWS creds on local repo
+## Check AWS creds on local repo
 
 To check for AWS creds manually, on a git repo, you can use.
 
