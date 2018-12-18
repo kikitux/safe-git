@@ -26,7 +26,7 @@ if [ $? -eq 0 ];then
   echo "use git rm to remove files and avoid commiting your creds"
   echo ""
 
-  for f in $FILES; do
+  for f in ${FILES}; do
     echo git rm --cached ${f%%:*}
   done
 
