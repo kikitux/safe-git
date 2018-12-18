@@ -3,12 +3,12 @@
 ## Check for AWS creds in git
 
 - Enable git templates:
-```
+```bash
 git config --global init.templatedir '~/.git-templates'
 ```
 
 - Create a directory to hold the global hooks:
-```
+```bash
 mkdir -p ~/.git-templates/hooks
 ```
 
@@ -37,18 +37,18 @@ fi
 
 
 - Make sure the hook is executable.
-```
+```bash
 chmod a+x ~/.git-templates/hooks/pre-commit
 ```
 
 - Re-initialize git in each existing repo you'd like to use this in:
-```
+```bash
 git init
 ```
 
 ### test it works
 
-```
+```bash
 mkdir catch-aws
 cd catch-aws
 git init
