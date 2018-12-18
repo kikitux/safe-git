@@ -17,7 +17,7 @@ mkdir -p ~/.git-templates/hooks
 `vi ~/.git-templates/hooks/pre-commit`
 
 ```
-#!/bin/sh
+#!/usr/bin/env bash
 
 FILES=$(git grep -E "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}")
 if [ $? -eq 0 ];then
