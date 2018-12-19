@@ -13,7 +13,9 @@ mkdir -p ~/.git-templates/hooks
 ```
 
 - Create `pre-commit` hook in ~/.git-templates/hooks
-`curl -L -o ~/.git-templates/hooks/pre-commit https://raw.githubusercontent.com/kikitux/safe-git/master/pre-commit`
+```bash
+curl -L -o ~/.git-templates/hooks/pre-commit https://raw.githubusercontent.com/kikitux/safe-git/master/pre-commit
+```
 
 - Make sure the hook is executable.
 ```bash
