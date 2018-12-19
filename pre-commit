@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+FILES=$(git grep -E "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}")
+if [ $? -eq 0 ];then
+  echo "err: commit include regex for AWS"
+  echo ${FILES}
+  echo "use git rm to remove files and avoid commiting your creds"
+  echo ""
+
+  for f in ${FILES}; do
+    echo git rm --cached ${f%%:*}
+  done
+
+  echo ""
+  exit 1
+fi
