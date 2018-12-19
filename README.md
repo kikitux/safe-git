@@ -22,11 +22,6 @@ curl -L -o ~/.git-templates/hooks/pre-commit https://raw.githubusercontent.com/k
 chmod a+x ~/.git-templates/hooks/pre-commit
 ```
 
-- Re-initialize git in each existing repo you'd like to use this in:
-```bash
-git init
-```
-
 ### test it works
 
 ```bash
@@ -48,6 +43,14 @@ use git rm to remove files and avoid commiting your creds
 
 git rm --cached bad.txt
 ```
+
+### for existing repos
+
+If you have an existing git repo, you can re-initialize so the new hook get copied:
+```bash
+git init
+```
+
 
 ## Check AWS creds on local repo
 
